@@ -38,9 +38,12 @@
 |
 */
 
+
+
+
 $route['admin/movies'] 			= "admin_movie_ci/movies";
 $route['admin/dashboard'] 		= "admin_dashboard_ci/dashboard";
-$route['default_controller'] 	= "blog";
+$route['default_controller'] 	= "home_controller";
 $route['404_override'] = '';
 
 
