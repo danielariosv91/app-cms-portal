@@ -20,7 +20,7 @@ class Admin_movie_ci extends CI_Controller {
 
 		$this->load->view('administrador/templates/header');
 		$this->load->view('administrador/templates/nav');
-		$this->load->view('administrador/views/movie_view');
+		$this->load->view('administrador/views/movies_view');
 		$this->load->view('administrador/templates/footer');
 	}
 }
