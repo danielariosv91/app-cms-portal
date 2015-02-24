@@ -24,10 +24,10 @@
 			return $this->db->insert("t_movies", $data); 
 		}
 
-		/* public function get_people(){
+		 public function get_all_movies(){
 
-			$query = $this->db->get('t_people'); 
+			$query = $this->db->get('t_movies'); 
 			return $query->result_array(); 
-		} */
+		} 
 	}
 ?>

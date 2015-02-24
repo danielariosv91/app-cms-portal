@@ -9,6 +9,8 @@ class Home_controller extends CI_Controller {
 		parent::__construct(); 
 
 		$this->load->helper('url');
+
+		$this->load->model('movie_model');
 	} 
 
 	/* =================================
@@ -19,9 +21,11 @@ class Home_controller extends CI_Controller {
 
 	public function index(){
 
+		$data['movies'] = $this->movie_model->get_all_movies(); 
+
 		$this->load->view('portal/templates/header'); 
 		$this->load->view('portal/templates/nav'); 
-		$this->load->view('portal/views/home');
+		$this->load->view('portal/views/home', $data);
 	}
 }
 
