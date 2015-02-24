@@ -1,16 +1,16 @@
         <div id="page-wrapper">
-
             <div class="container-fluid">
 
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Forms
+                            Agregar película 
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>
+                                <?php echo anchor('admin/dashboard','Dashboard');?>
                             </li>
                             <li class="active">
                                 <i class="fa fa-edit"></i> Forms
@@ -23,18 +23,12 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form">
+                        <form role="form" method="post" action="<?php echo base_url()?>admin_movie_ci/add_movie" >
 
                             <div class="form-group">
-                                <label>Text Input</label>
-                                <input class="form-control">
-                                <p class="help-block">Example block-level help text here.</p>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Text Input with Placeholder</label>
-                                <input class="form-control" placeholder="Enter text">
-                            </div>
+                                <label>Nombre</label>
+                                <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película">                                
+                            </div>                           
 
                             <div class="form-group">
                                 <label>Static Control</label>
