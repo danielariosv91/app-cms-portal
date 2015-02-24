@@ -30,16 +30,28 @@
                                 <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película">                                
                             </div> 
                             <div class="form-group">
-                                <label>Director</label>
+                                <label>Dirigida por:</label>
                                 <select class="form-control" name="m_director">
                                     <?php foreach ($directors as $director): ?>
                                         <option> <?php echo $director['d_name']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div> 
+                            <div class="form-group">
+                                <label>Año:</label>
+                                <select class="form-control" name="m_year">
+                                    <?php for ($i = 1910; $i <= 2015; $i++): ?>
+                                        <option> <?php echo $i ?></option>
+                                    <?php endfor; ?>
+                                </select>
                             </div>  
                             <div class="form-group">
+                                <label>Música de:</label>
+                                <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
+                            </div> 
+                            <div class="form-group">
                                 <label>Categoría</label>
-                                <select class="form-control" name="m_director">
+                                <select class="form-control" name="m_category">
                                     <?php foreach ($categories as $category): ?>
                                         <option> <?php echo $category['c_category']; ?></option>
                                     <?php endforeach; ?>

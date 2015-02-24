@@ -41,8 +41,13 @@ class Admin_movie_ci extends CI_Controller {
 
 	public function add_movie(){
 
+		
+
 		$this->form_validation->set_rules('m_name', 'MovieName');
 		$this->form_validation->set_rules('m_director', 'MovieDirector');
+		$this->form_validation->set_rules('m_year', 'MovieYear');
+		$this->form_validation->set_rules('m_music', 'MovieMusic');
+		$this->form_validation->set_rules('m_category', 'MovieCategory');
 
 		if ($this->form_validation->run() == false){
 			
