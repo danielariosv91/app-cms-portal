@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['admin/dashboard'] 		= "admin_dashboard_ci/dashboard";
+$route['default_controller'] 	= "blog";
 $route['404_override'] = '';
 
 
