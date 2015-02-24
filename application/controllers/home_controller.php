@@ -27,6 +27,15 @@ class Home_controller extends CI_Controller {
 		$this->load->view('portal/templates/nav'); 
 		$this->load->view('portal/views/home', $data);
 	}
+
+	public function movie_view($url){
+
+		$data['movie'] = $this->movie_model->get_movie_by_url($url);
+
+		$this->load->view('portal/templates/header'); 
+		$this->load->view('portal/templates/nav'); 
+		$this->load->view('portal/views/movie_view', $data);
+	}
 }
 
 /* End of file welcome.php */

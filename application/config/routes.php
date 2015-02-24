@@ -40,6 +40,7 @@
 
 
 
+$route['movie/(:any)']          = "home_controller/movie_view/$1"; 
 
 $route['admin/movies'] 			= "admin_movie_ci/movies";
 $route['admin/dashboard'] 		= "admin_dashboard_ci/dashboard";

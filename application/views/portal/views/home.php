@@ -45,7 +45,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
-                                <h4><a href="#"><?php echo $movie['m_name']; ?></a></h4>
+                                <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
                                 <p></p>
                             </div>
                             <div class="ratings">
