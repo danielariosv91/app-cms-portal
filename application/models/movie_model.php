@@ -13,7 +13,10 @@
 
 			$data = array(
 
-					'm_name'  => $this->input->post('m_name'),					
+					'm_name'     => $this->input->post('m_name'),	
+					'm_directed' => $this->input->post('m_director'),
+					'm_music'    => $this->input->post('m_music'),
+					'category'   => $this->input->post('m_category'), 				
 					
 				); 
 

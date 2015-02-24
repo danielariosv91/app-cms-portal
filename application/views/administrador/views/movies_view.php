@@ -28,7 +28,23 @@
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película">                                
-                            </div>                           
+                            </div> 
+                            <div class="form-group">
+                                <label>Director</label>
+                                <select class="form-control" name="m_director">
+                                    <?php foreach ($directors as $director): ?>
+                                        <option> <?php echo $director['d_name']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>  
+                            <div class="form-group">
+                                <label>Categoría</label>
+                                <select class="form-control" name="m_director">
+                                    <?php foreach ($categories as $category): ?>
+                                        <option> <?php echo $category['c_category']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>                        
 
                             <div class="form-group">
                                 <label>Static Control</label>
@@ -109,16 +125,7 @@
                                 </label>
                             </div>
 
-                            <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
+                         
 
                             <div class="form-group">
                                 <label>Multiple Selects</label>
