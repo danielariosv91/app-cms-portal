@@ -8,7 +8,7 @@ class Admin_movie_ci extends CI_Controller {
 
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation'); 
-		$this->load->model->('movie_model'); 
+		$this->load->model('movie_model'); 
 	}
 
 
@@ -34,6 +34,8 @@ class Admin_movie_ci extends CI_Controller {
 	 */
 
 	public function add_movie(){
+
+		$this->form_validation->set_rules('m_name', 'MovieName');
 
 		if ($this->form_validation->run() == false){
 			
