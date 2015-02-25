@@ -155,4 +155,9 @@
             return false; 
         });             
     });
+
+    /* Cerrar Modal */
+    $("#close").click(function(){
+        location.reload();
+    });
 </script>

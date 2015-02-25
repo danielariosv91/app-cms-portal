@@ -16,9 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/stylesheet.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="<?php echo base_url();?>assets/css/plugins/morris.css" rel="stylesheet">
+  
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

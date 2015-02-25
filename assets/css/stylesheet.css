@@ -13,3 +13,19 @@
 	position: absolute;
 	width: 100%;
 }
+
+
+.slide-content-admin{
+
+	width: 280px;
+	height: 160px; 
+	border: thick solid #FFFFFF;
+	overflow: hidden; 
+	position: relative; 
+}
+
+.slide-content-admin > img{
+
+	position: absolute;
+	width: 100%;
+}

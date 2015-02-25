@@ -22,7 +22,7 @@
 
                 <div class="row">
 
-                    <!-- ==== Form ==== -->
+                    <!-- ==== Form Image==== -->
                     <div class="col-lg-4">
                         <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_slider_ci/upload_photo_slider" >
                        
@@ -35,17 +35,46 @@
                         </form>
                         <hr> 
                     </div>
-                    <!-- End Form -->
+                    <!-- End Form Image -->
 
-                    <!-- ==== Thumbnail ==== -->
-                    <?php foreach ($sliders as $slide): ?>
-                        <div class="col-xs-6 col-md-3">
-                            <a href="#" class="thumbnail">
-                              <img src="<?php echo base_url()?>images/slider/<?php echo $slide['s_name']?>" alt="What is this?">
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
-                    <!-- End Thumbnail -->
+
+                    <!-- ==== Table Thumbnail ==== --> 
+                    <div class="col-lg-8">                                  
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                   <th></th>
+                                   <th></th>                                     
+                                </tr>  
+                            </thead>
+                            <tbody>
+                                <?php foreach ($sliders as $slider): ?>
+                                    <tr class="col-lg-8">
+                                       <td>
+                                            <div class="slide-content-admin">
+                                                <img src="<?php echo base_url()?>images/slider/<?php echo $slider['s_name']; ?>">
+                                            </div>
+                                       </td> 
+                                       <td>
+                                            <div class="checkbox">
+                                              <label>
+                                                <input type="checkbox" value=""> Destacar
+                                              </label>
+                                            </div>
+                                            <div class="checkbox">
+                                              <label>
+                                                <input type="checkbox" value=""> Activar
+                                              </label>
+                                            </div>
+                                       </td> 
+                                    </tr>
+                                <?php endforeach;?>
+                            </tbody>
+                        </table>  
+                    </div>   
+                    <!-- End Thumbnail -->              
+
+                    
                 <!-- /.row -->
 
             </div>

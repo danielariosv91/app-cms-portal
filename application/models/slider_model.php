@@ -28,7 +28,9 @@
 			
 			$data = array(
 
-					's_name'       => $name,									
+					's_name'        => $name,
+					's_active_item' => 0,
+					's_show_slider' => 0, 									
 					
 				); 
 

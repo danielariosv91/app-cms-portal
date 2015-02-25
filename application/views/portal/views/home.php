@@ -1,12 +1,10 @@
 
-<?php var_dump($sliders)?>
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">      
 
             <div class="col-md-10 col-md-offset-1">
-
                 <div class="row carousel-holder">
 
                     <div class="col-md-12">
@@ -39,30 +37,34 @@
 
 
                 <div class="row">
-                    <?php foreach ($movies as $movie): ?>
-                    <div class="col-sm-4 col-lg-4 col-md-4">                        
-                        <div class="thumbnail">
-                            <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>" alt="">
-                            <div class="caption">
-                                <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
-                                <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
-                                <p><?php echo $movie['m_description']; ?></p>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                        <?php foreach ($movies as $movie): ?>
+                            <div class="col-sm-4 col-lg-4 col-md-4">                        
+                                <div class="thumbnail">
+                                    <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>" alt="">
+                                    <div class="caption">
+                                        <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
+                                        <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
+                                        <p><?php echo $movie['m_description']; ?></p>
+                                    </div>
+                                    <div class="ratings">
+                                        <p class="pull-right">15 reviews</p>
+                                        <p>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                           
                             </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
-                        </div>
-                   
-                    </div>
-                    <?php endforeach; ?>        
+                        <?php endforeach; ?>                         
 
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
