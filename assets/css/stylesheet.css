@@ -1,0 +1,15 @@
+
+.img-content{
+
+	width: 750px;
+	height: 270px; 
+	border: thick solid #FFFFFF;
+	overflow: hidden; 
+	position: relative; 
+}
+
+.img-content > img{
+
+	position: absolute;
+	width: 100%;
+}

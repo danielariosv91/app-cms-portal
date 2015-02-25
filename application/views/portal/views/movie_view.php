@@ -26,11 +26,12 @@
 
                 <!-- Date/Time -->
                 <p><i class="fa fa-clock-o"></i> Posted on August 24, 2013 at 9:00 PM</p>
-
                 <hr>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <div class="img-content">
+                    <img src="<?php echo base_url(); ?>images/<?php echo $movie['m_images']; ?>" alt="">
+                </div>
                 <hr>
 
                 <!-- Post Content -->
