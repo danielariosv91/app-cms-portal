@@ -21,23 +21,31 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
 
+                    <!-- ==== Form ==== -->
+                    <div class="col-lg-4">
                         <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_slider_ci/upload_photo_slider" >
                        
                             <div class="form-group">
                                 <label >Subir imagen</label>
                                 <input type="file" name="file" id="exampleInputFile"> 
                                 <input type="hidden" name="file">   
-                            </div>               
-
-
+                            </div>  
                             <button type="submit" class="btn btn-default">Agregar</button>
                         </form>
-                        <hr>
+                        <hr> 
+                    </div>
+                    <!-- End Form -->
 
-        
-                </div>
+                    <!-- ==== Thumbnail ==== -->
+                    <?php foreach ($sliders as $slide): ?>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                              <img src="<?php echo base_url()?>images/slider/<?php echo $slide['s_name']?>" alt="What is this?">
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                    <!-- End Thumbnail -->
                 <!-- /.row -->
 
             </div>

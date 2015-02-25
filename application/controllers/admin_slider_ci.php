@@ -21,9 +21,11 @@ class Admin_slider_ci extends CI_Controller {
 
 	public function slider(){
 		
+		$data['sliders'] = $this->slider_model->get_all_slider_selected();
+
 		$this->load->view('administrador/templates/header'); 
 		$this->load->view('administrador/templates/nav'); 
-		$this->load->view('administrador/views/slider_view');
+		$this->load->view('administrador/views/slider_view', $data);
 	}
 
 	public function upload_photo_slider(){
