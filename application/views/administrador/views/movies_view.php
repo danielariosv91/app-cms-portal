@@ -109,6 +109,11 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
                             </form>                             
                       </div>
+                        <div class="modal-footer">
+                            <div class="alert-content">
+                                
+                            </div>   
+                        </div>
                     </div>
                   </div>
                 </div>        
@@ -126,12 +131,12 @@
 
     $(document).ready(function(){
 
-        $("#submitDirected").click(function(){
-
-            
+        $("#submitDirected").click(function(){            
 
             var dataPost = $("#form-directed").serialize();           
-            var dataURL = "<?php echo base_url();?>admin_movie_ci/add_directed"; 
+            var dataURL  = '<?php echo base_url();?>admin_movie_ci/add_directed'; 
+            var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>'
+
 
             $.ajax({
 
@@ -141,7 +146,9 @@
                 data: dataPost, 
                 success: function(data){
 
-                    console.log(data); 
+                    $(".alert-content").append(alertMSG); 
+                    $("#submitDirected").attr("disabled", "disabled"); 
+
                 }
             }); 
 
