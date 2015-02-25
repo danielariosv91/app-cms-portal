@@ -1,5 +1,5 @@
 
-
+<?php var_dump($sliders)?>
     <!-- Page Content -->
     <div class="container">
 
@@ -16,16 +16,15 @@
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                             </ol>
-                            <div class="carousel-inner">
+                            <div class="carousel-inner"> 
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
+                                        <img class="slide-image" src="" alt="">
+                                    </div> 
+                                <?php foreach ($sliders as $slider): ?>                               
+                                    <div class="item">
+                                        <img class="slide-image" src="<?php echo base_url()?>images/slider/<?php echo $slider['s_name'];?>" alt="">
+                                    </div>  
+                                <?php endforeach; ?>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
@@ -37,6 +36,7 @@
                     </div>
 
                 </div>
+
 
                 <div class="row">
                     <?php foreach ($movies as $movie): ?>

@@ -10,7 +10,7 @@ class Home_controller extends CI_Controller {
 
 		$this->load->helper('url');
 
-		$this->load->model('movie_model');
+		$this->load->model(array('movie_model', 'slider_model'));
 	} 
 
 	/* =================================
@@ -21,8 +21,9 @@ class Home_controller extends CI_Controller {
 
 	public function index(){
 
-		$data['movies'] = $this->movie_model->get_all_movies(); 
-		$data['title'] = "Movies"; 
+		$data['movies']  = $this->movie_model->get_all_movies(); 
+		$data['sliders'] = $this->slider_model->get_all_slider_selected();
+		$data['title']   = "Movies"; 
 
 		$this->load->view('portal/templates/header',$data); 
 		$this->load->view('portal/templates/nav'); 
