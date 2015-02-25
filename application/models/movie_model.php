@@ -5,11 +5,24 @@
 		public function __construct(){
 
 			$this->load->database(); 
+			$this->load->helper('form');
 		}
 
 
-		public function add_movie(){
-			
+		public function add_movie(){			
+
+			$config['upload_path'] = './images/'; 
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['file_name'] = $_FILES['file']['name'];
+
+			$this->load->library('upload', $config);
+
+			$file = $this->upload->data();
+			$name = $file['file_name']; 
+
+			/* subir imagen al servidor*/
+			$this->upload->do_upload('file'); 
+
 			$url = url_title($this->input->post('m_name'), 'dash', true);
 
 			$data = array(
@@ -21,6 +34,7 @@
 					'm_category' 	 => $this->input->post('m_category'),
 					'm_description'  => $this->input->post('m_description'),
 					'm_article'  	 => $this->input->post('m_article'),
+					'm_images'       => $name,
 					'm_url'      	 => $url, 				
 					
 				); 

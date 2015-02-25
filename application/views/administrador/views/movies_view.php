@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-lg-6">
 
-                        <form role="form" method="post" action="<?php echo base_url()?>admin_movie_ci/add_movie" >
+                        <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_movie_ci/add_movie" >
 
                             <div class="form-group">
                                 <label>Nombre</label>
@@ -64,7 +64,11 @@
                             <div class="form-group">
                                 <label>Articulo</label>
                                 <textarea name="m_article"></textarea>
-                            </div>              
+                            </div> 
+                            <div class="form-group">
+                                <label >Subir imagen</label>
+                                <input type="file" name="file" id="exampleInputFile">    
+                            </div>               
 
 
                             <button type="submit" class="btn btn-default">Agregar</button>
