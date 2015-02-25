@@ -70,6 +70,7 @@ class Admin_movie_ci extends CI_Controller {
 
 	public function add_directed(){
 
+		
 		$this->form_validation->set_rules('d_name', 'DirectedName');
 		if ($this->form_validation->run() == false){
 			

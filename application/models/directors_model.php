@@ -8,11 +8,13 @@
 		}
 
 
-		public function add_director(){			
+		public function add_director(){	
+
+			$d_name = $_POST['d_name']; 		
 
 			$data = array(
 
-					'd_name'  => $this->input->post('d_name'),					
+					'd_name'  => $d_name,					
 				); 
 
 			return $this->db->insert("t_directed", $data); 
