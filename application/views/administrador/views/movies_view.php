@@ -80,7 +80,7 @@
                             <div class="form-group">
                                 <label >Subir imagen</label>
                                 <input type="file" name="file" id="exampleInputFile">    
-                            </div>               
+                            </div>     
 
 
                             <button type="submit" class="btn btn-default">Agregar</button>
@@ -100,17 +100,14 @@
                       </div>
                       <div class="modal-body">
                             <!-- Form Direted -->
-                            <form method="post" action="<?php echo base_url()?>admin_movie_ci/add_directed">
-                              <div class="form-group">
-                                <label>Nombre director: </label>
-                                <input type="text" class="form-control" name="d_name" placeholder="Ingresar nombre director" required>
-                              </div>                            
-                              <button type="submit" class="btn btn-default">Añadir</button>
+                            <form id="form-directed">
+                                <div class="form-group">
+                                    <label>Nombre director: </label>
+                                    <input type="text" class="form-control" name="d_name" placeholder="Ingresar nombre director" required>
+                                </div>                            
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="submitDirected" >Agregar</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
                             </form>                             
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Agregar</button>
                       </div>
                     </div>
                   </div>
@@ -124,3 +121,31 @@
 
     </div>
     <!-- /#wrapper -->
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $("#submitDirected").click(function(){
+
+            console.log("no funciona?"); 
+
+            var dataPost = $("form-directed").serialize(); 
+            var dataURL = "<?php echo base_url();?>admin_movie_ci/add_directed"; 
+
+            $.ajax({
+
+                type: "POST", 
+                url: dataURL, 
+                dataType: 'text', 
+                data: dataPost, 
+                success: function(data){
+
+                    $console.log(data); 
+                }
+            }); 
+
+            return false; 
+        });             
+    });
+</script>
