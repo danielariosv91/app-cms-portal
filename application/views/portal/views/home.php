@@ -42,7 +42,7 @@
                     <?php foreach ($movies as $movie): ?>
                     <div class="col-sm-4 col-lg-4 col-md-4">                        
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>" alt="">
                             <div class="caption">
                                 <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
                                 <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
