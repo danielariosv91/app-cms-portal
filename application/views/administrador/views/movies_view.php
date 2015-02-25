@@ -27,7 +27,7 @@
 
                             <div class="form-group">
                                 <label>Nombre y Director </label>
-                                <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película">                                
+                                <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película" required>                                
                             </div>                             
                             <div class="form-group form-inline">                                
                                 <div class="btn-group">                                    
@@ -38,7 +38,15 @@
                                     </select>
                                 </div>                                
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Añadir director</button>
+                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                        Añadir director
+                                    </button>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </button>                                    
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
+                                    </button>
                                 </div>                                                                                         
                             </div>                                                                        
                             <div class="form-group">
@@ -47,7 +55,8 @@
                                     <?php for ($i = 1910; $i <= 2015; $i++): ?>
                                         <option> <?php echo $i ?></option>
                                     <?php endfor; ?>
-                                </select>                                                            
+                                </select> 
+                            </div>                                                           
                             <div class="form-group">
                                 <label>Música de:</label>
                                 <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
@@ -87,14 +96,21 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        <h4 class="modal-title" id="myModalLabel">Agregar nuevo director </h4>
                       </div>
                       <div class="modal-body">
-                        ...
+                            <!-- Form Direted -->
+                            <form method="post" action="<?php echo base_url()?>admin_movie_ci/add_directed">
+                              <div class="form-group">
+                                <label>Nombre director: </label>
+                                <input type="text" class="form-control" name="d_name" placeholder="Ingresar nombre director" required>
+                              </div>                            
+                              <button type="submit" class="btn btn-default">Añadir</button>
+                            </form>                             
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Agregar</button>
                       </div>
                     </div>
                   </div>

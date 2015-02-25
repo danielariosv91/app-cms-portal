@@ -8,17 +8,15 @@
 		}
 
 
-		/* public function add_movie(){
-			
+		public function add_director(){			
 
 			$data = array(
 
-					'm_name'  => $this->input->post('m_name'),					
-					
+					'd_name'  => $this->input->post('d_name'),					
 				); 
 
-			return $this->db->insert("t_movies", $data); 
-		} */
+			return $this->db->insert("t_directed", $data); 
+		} 
 
 		public function get_directed(){
 

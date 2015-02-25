@@ -9,10 +9,15 @@ class Admin_movie_ci extends CI_Controller {
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('form_validation'); 
 		
-		$this->load->model('movie_model'); 
-		$this->load->model('directors_model'); 
-		$this->load->model('categories_model'); 
-	}
+		$this->load->model(
+
+			array(
+
+				'movie_model', 
+				'directors_model',
+				'categories_model'			
+			));
+		}
 
 
 
@@ -61,5 +66,20 @@ class Admin_movie_ci extends CI_Controller {
 			$this->movie_model->add_movie(); 			
 			redirect('admin/movies'); 
 		}
+	}
+
+	public function add_directed(){
+
+		$this->form_validation->set_rules('d_name', 'DirectedName');
+		if ($this->form_validation->run() == false){
+			
+			//handle error
+		
+		} else {
+
+			$this->directors_model->add_director(); 			
+			redirect('admin/movies'); 
+		}
+
 	}
 }
