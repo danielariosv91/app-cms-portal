@@ -121,14 +121,15 @@
                         <?php echo anchor('admin/dashboard','Dashboard')?>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <?php echo anchor('admin/movies','Movies')?>
+                    </li>
+                    <li>
+                        <?php echo anchor('admin/slider','Slider')?>
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
-                    <li>
-                        <?php echo anchor('admin/movies','Movies')?>
-                    </li>
+                    
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>
