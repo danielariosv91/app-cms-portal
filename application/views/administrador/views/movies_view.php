@@ -26,25 +26,28 @@
                         <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_movie_ci/add_movie" >
 
                             <div class="form-group">
-                                <label>Nombre</label>
+                                <label>Nombre y Director </label>
                                 <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película">                                
-                            </div> 
-                            <div class="form-group">
-                                <label>Dirigida por:</label>
-                                <select class="form-control" name="m_director">
-                                    <?php foreach ($directors as $director): ?>
-                                        <option> <?php echo $director['d_name']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div> 
+                            </div>                             
+                            <div class="form-group form-inline">                                
+                                <div class="btn-group">                                    
+                                    <select class="form-control" role="group" name="m_director">
+                                        <?php foreach ($directors as $director): ?>
+                                            <option> <?php echo $director['d_name']; ?></option>
+                                        <?php endforeach; ?>                                      
+                                    </select>
+                                </div>                                
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-link">Añadir director</button>
+                                </div>                                                                                         
+                            </div>                                                                        
                             <div class="form-group">
                                 <label>Año:</label>
                                 <select class="form-control" name="m_year">
                                     <?php for ($i = 1910; $i <= 2015; $i++): ?>
                                         <option> <?php echo $i ?></option>
                                     <?php endfor; ?>
-                                </select>
-                            </div>  
+                                </select>                                                            
                             <div class="form-group">
                                 <label>Música de:</label>
                                 <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
