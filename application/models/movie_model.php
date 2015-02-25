@@ -19,6 +19,7 @@
 					'm_year'     => $this->input->post('m_year'),
 					'm_music'    => $this->input->post('m_music'),
 					'm_category' => $this->input->post('m_category'),
+					'm_article'  => $this->input->post('m_article'),
 					'm_url'      => $url, 				
 					
 				); 

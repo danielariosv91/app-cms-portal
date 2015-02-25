@@ -42,7 +42,13 @@
     <script src="<?php echo base_url();?>assets/js/plugins/morris/morris.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/plugins/morris/morris-data.js"></script>
 
-
+    <script type="text/javascript" src="<?php echo base_url();?>plugins/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+        
+</script>
 
 </head>
 

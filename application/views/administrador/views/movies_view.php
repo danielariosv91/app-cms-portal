@@ -56,7 +56,11 @@
                                         <option> <?php echo $category['c_category']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                            </div>               
+                            </div>  
+                            <div class="form-group">
+                                <label>Articulo</label>
+                                <textarea name="m_article"></textarea>
+                            </div>              
 
 
                             <button type="submit" class="btn btn-default">Agregar</button>
