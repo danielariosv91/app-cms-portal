@@ -21,7 +21,7 @@
 		} */
 
 		public function get_categories(){
-
+			
 			$query = $this->db->get('t_categories'); 
 			return $query->result_array(); 
 		} 
