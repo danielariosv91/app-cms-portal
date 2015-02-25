@@ -15,13 +15,19 @@
                                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner"> 
-                                <div class="item active">
-                                        <img class="slide-image" src="" alt="">
+                                <?php foreach ($sliders as $slider): ?>
+                                <?php if ($slider['s_active_item'] == 1): ?>
+                                    <div class="item active">
+                                        <img class="slide-image" src="<?php echo base_url()?>images/slider/<?php echo $slider['s_name'];?>" alt="">                                       
                                     </div> 
-                                <?php foreach ($sliders as $slider): ?>                               
+                                <?php endif; ?>
+                                <?php endforeach;?>
+                                <?php foreach ($sliders as $slider): ?> 
+                                    <?php if ($slider['s_show_slider'] == 1): ?>                              
                                     <div class="item">
                                         <img class="slide-image" src="<?php echo base_url()?>images/slider/<?php echo $slider['s_name'];?>" alt="">
-                                    </div>  
+                                    </div> 
+                                    <?php endif; ?> 
                                 <?php endforeach; ?>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -32,7 +38,6 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
 
 
