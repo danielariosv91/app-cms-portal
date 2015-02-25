@@ -14,13 +14,14 @@
 
 			$data = array(
 
-					'm_name'     => $this->input->post('m_name'),	
-					'm_directed' => $this->input->post('m_director'),
-					'm_year'     => $this->input->post('m_year'),
-					'm_music'    => $this->input->post('m_music'),
-					'm_category' => $this->input->post('m_category'),
-					'm_article'  => $this->input->post('m_article'),
-					'm_url'      => $url, 				
+					'm_name'     	 => $this->input->post('m_name'),	
+					'm_directed' 	 => $this->input->post('m_director'),
+					'm_year'     	 => $this->input->post('m_year'),
+					'm_music'    	 => $this->input->post('m_music'),
+					'm_category' 	 => $this->input->post('m_category'),
+					'm_description'  => $this->input->post('m_description'),
+					'm_article'  	 => $this->input->post('m_article'),
+					'm_url'      	 => $url, 				
 					
 				); 
 

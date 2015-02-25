@@ -58,6 +58,10 @@
                                 </select>
                             </div>  
                             <div class="form-group">
+                                <label>Description</label>
+                                <input class="form-control" type="text" name="m_description" placeholder="Ingresar descripcion">                                
+                            </div> 
+                            <div class="form-group">
                                 <label>Articulo</label>
                                 <textarea name="m_article"></textarea>
                             </div>              
