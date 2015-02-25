@@ -48,6 +48,7 @@ class Admin_movie_ci extends CI_Controller {
 		$this->form_validation->set_rules('m_year', 'MovieYear');
 		$this->form_validation->set_rules('m_music', 'MovieMusic');
 		$this->form_validation->set_rules('m_category', 'MovieCategory');
+		$this->form_validation->set_rules('m_article', 'MovieArticle');
 
 		if ($this->form_validation->run() == false){
 			
