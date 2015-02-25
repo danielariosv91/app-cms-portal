@@ -25,6 +25,7 @@ class Admin_movie_ci extends CI_Controller {
 
 		$data['directors'] = $this->directors_model->get_directed(); 
 		$data['categories'] = $this->categories_model->get_categories(); 
+	
 
 		$this->load->view('administrador/templates/header');
 		$this->load->view('administrador/templates/nav');

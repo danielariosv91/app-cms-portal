@@ -22,8 +22,9 @@ class Home_controller extends CI_Controller {
 	public function index(){
 
 		$data['movies'] = $this->movie_model->get_all_movies(); 
+		$data['title'] = "Movies"; 
 
-		$this->load->view('portal/templates/header'); 
+		$this->load->view('portal/templates/header',$data); 
 		$this->load->view('portal/templates/nav'); 
 		$this->load->view('portal/views/home', $data);
 	}
@@ -31,8 +32,10 @@ class Home_controller extends CI_Controller {
 	public function movie_view($url){
 
 		$data['movie'] = $this->movie_model->get_movie_by_url($url);
+		$data['title'] = $data['movie']['m_name']; 
 
-		$this->load->view('portal/templates/header'); 
+
+		$this->load->view('portal/templates/header', $data); 
 		$this->load->view('portal/templates/nav'); 
 		$this->load->view('portal/views/movie_view', $data);
 	}
