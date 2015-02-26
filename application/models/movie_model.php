@@ -48,6 +48,8 @@
 
 			$data = array(
 
+
+					'm_name'     	 => $this->input->post('m_name'),		
 					'm_images'       => $name,
 				);
 

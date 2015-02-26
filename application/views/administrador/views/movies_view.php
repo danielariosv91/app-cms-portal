@@ -154,6 +154,7 @@
                                         <label>Quote</label>
                                         <input id="m_quote_input" class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
                                     </div>
+                                    <button type="hidden" class="hidden" id="hidden" value="0">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="submitMovie" >Agregar</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
                                 </form>                                                              
@@ -245,10 +246,27 @@
 
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#m_article').val();          
-            var dataPost = $("#form-movie").serialize();   
-            var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
-            var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>'
+            var dataPost = $("#form-movie").serialize(); 
+            var hidden = $("#hidden").val();
 
+            console.log(hidden); 
+
+             if(hidden == 0){
+
+                var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
+                var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>';
+
+            } else {
+                            
+                var dataUrl  = '<?php echo base_url();?>admin_movie_ci/update_movie/' + hidden; 
+                var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha editado con éxito!</div>';
+           
+            }
+
+            console.log("que es esto?" + dataUrl);
+
+
+           
             $.ajax({
 
                 type: "POST",
@@ -333,7 +351,8 @@
                         $("#m_year_input").val(this['m_year']);
                         $("#m_score_input").val(this['m_music']); 
                         $("#m_article").val(this['m_article']);  
-                        $("#m_quote_input").val(this['m_quotes']);   
+                        $("#m_quote_input").val(this['m_quotes']); 
+                        $("#hidden").val(this['m_index']);  
                     });
                 
             }

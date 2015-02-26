@@ -84,6 +84,7 @@ class Admin_movie_ci extends CI_Controller {
 
 	public function update_movie($id){
 
+		
 		$this->form_validation->set_rules('m_name', 'MovieName');
 		$this->form_validation->set_rules('m_director', 'MovieDirector');
 		$this->form_validation->set_rules('m_year', 'MovieYear');
