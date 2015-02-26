@@ -247,6 +247,7 @@
             var dataTextArea = $('#m_article').val();          
             var dataPost = $("#form-movie").serialize();   
             var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
+            var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>'
 
             $.ajax({
 
@@ -256,7 +257,8 @@
                 data: (dataTextArea, dataPost),
                 success: function(data){
 
-                    console.log(data); 
+                    $(".alert-content").append(alertMSG);                    
+                    $("#submitDirected").attr("disabled", "disabled"); 
                 }
             });
 
@@ -274,7 +276,6 @@
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#t_description').val();          
             var dataPost = $("#form-directed").serialize();
-
             var dataURL  = '<?php echo base_url();?>admin_movie_ci/add_directed'; 
             var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>'
 
@@ -288,7 +289,7 @@
 
                 success: function(data){
 
-                    $(".alert-content").append(alertMSG); 
+                    $(".alert-content").append(alertMSG);                    
                     $("#submitDirected").attr("disabled", "disabled"); 
 
                 }
