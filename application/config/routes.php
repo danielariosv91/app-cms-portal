@@ -38,7 +38,7 @@
 |
 */
 
-
+$route['directores/(:any)']     = "directed_controller/single_directed_view/$1";
 $route['directores']            = "directed_controller/directed"; 
 $route['movie/(:any)']          = "home_controller/movie_view/$1"; 
 

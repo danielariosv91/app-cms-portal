@@ -137,8 +137,6 @@
 
         $("#submitDirected").click(function(){            
 
-            
-
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#t_description').val();          
             var dataPost = $("#form-directed").serialize();

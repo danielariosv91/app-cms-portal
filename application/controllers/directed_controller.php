@@ -29,6 +29,18 @@ class Directed_controller extends CI_Controller {
 
 	}
 
+	public function single_directed_view($url){
+		
+		$data['directed'] = $this->directors_model->get_directed_by_url($url);
+		$data['title'] = $data['directed']['d_name']; 
+
+
+		$this->load->view('portal/templates/header', $data); 
+		$this->load->view('portal/templates/nav'); 
+		$this->load->view('portal/views/single_directed_page', $data);
+
+	}
+
 }
 
 /* End of file welcome.php */

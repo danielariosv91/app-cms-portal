@@ -11,7 +11,7 @@
 		public function add_director(){	
 
 
-		
+
 			$d_name = $_POST['d_name']; 
 			$d_description = $_POST['d_description']; 		
 			$d_url    = url_title($d_name, 'dash', true);
@@ -31,5 +31,11 @@
 			$query = $this->db->get('t_directed'); 
 			return $query->result_array(); 
 		} 
+
+		public function get_directed_by_url($url){
+
+			$query = $this->db->get_where('t_directed', array('d_url' => $url));
+			return $query->row_array();
+		}
 	}
 ?>
