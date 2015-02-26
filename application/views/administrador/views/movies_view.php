@@ -10,9 +10,7 @@
                                 <i class="fa fa-dashboard"></i>
                                 <?php echo anchor('admin/dashboard','Dashboard');?>
                             </li>
-                            <li class="active">
-                                <i class="fa fa-edit"></i> Forms
-                            </li>
+                            <li class="active"><i class="fa fa-edit"></i> Sección películas</li>
                         </ol>
                     </div>
                 </div>
@@ -52,7 +50,7 @@
                                                 <td><?php echo $movie['m_category']?></td>
                                                 <td>
                                                     <?php if ($movie['m_images'] == null): ?>    
-                                                        <input type="checkbox" disabled></td>
+                                                        <input type="checkbox" disabled>
                                                     <?php else: ?>
                                                         <?php if ($movie['m_active_item'] == 1): ?>
                                                             <input type="checkbox" checked></td>
@@ -60,6 +58,18 @@
                                                             <input type="checkbox"></td>    
                                                         <?php endif;?>
                                                     <?php endif; ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($movie['m_images'] == null): ?>
+                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Dabes subir una imagen, antes de activar">
+                                                        <span class="glyphicon glyphicon-camera"></span>
+                                                    </a>
+                                                    <?php else:?>
+                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-camera"></span>
+                                                    </a>
+                                                    <?php endif; ?>
+                                                </td>
                                                 <td>
                                                     <button class="btn btn-default" onclick="editMovie(<?php echo $movie['m_index']?>)" data-toggle="modal" data-target="#modalMovies">
                                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -69,18 +79,7 @@
                                                     <button class="btn btn-default">
                                                         <span class="glyphicon glyphicon-remove"></span>
                                                     </button>
-                                                </td>
-                                                <td>
-                                                    <?php if ($movie['m_images'] == null): ?>
-                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-danger">
-                                                        <span class="glyphicon glyphicon-camera"></span>
-                                                    </a>
-                                                    <?php else:?>
-                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-default">
-                                                        <span class="glyphicon glyphicon-camera"></span>
-                                                    </a>
-                                                    <?php endif; ?>
-                                                </td>
+                                                </td>                                                
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -226,18 +225,27 @@
 
     $(document).ready(function(){
 
+        
+        /*  ======================
+              Función: tooltip.
+            ======================  */
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        }); 
+
+
+         
+        /*  ===================================
+              Submit: Agregar nueva pelicula
+            ===================================  */
 
 
         $("#submitMovie").click(function(){
 
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#m_article').val();          
-            var dataPost = $("#form-movie").serialize();
-
-
-
-             
-
+            var dataPost = $("#form-movie").serialize();   
             var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
 
             $.ajax({
@@ -255,6 +263,11 @@
             return false; 
 
         });
+
+
+        /*  ===================================
+              Submit: Agregar nuevo director
+            ===================================  */
 
         $("#submitDirected").click(function(){            
 
@@ -287,10 +300,15 @@
 
     });
 
-    /* Cerrar Modal */
-    $("#close").click(function(){
-        location.reload();
-    });
+
+
+    /*  ==================================
+          Función: Cierra ventanas Modal
+        ==================================  */
+            
+        $("#close").click(function(){
+            location.reload();
+        });
 
 
     function editMovie(id){

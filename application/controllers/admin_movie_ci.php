@@ -41,6 +41,16 @@ class Admin_movie_ci extends CI_Controller {
 
 
 
+
+	public function movie_image(){
+
+		$this->load->view('administrador/templates/header');
+		$this->load->view('administrador/templates/nav');
+		$this->load->view('administrador/views/movie_image_view');
+	}
+
+
+
 	/* ===============================================================
 	    Action: Add Movie, agrega a una pelicula a la tabla t_movies.  
 	   ===============================================================
