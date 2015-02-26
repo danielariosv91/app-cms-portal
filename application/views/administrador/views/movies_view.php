@@ -95,7 +95,7 @@
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Agregar nueva pelicula </h4>
+                                <h4 class="modal-title" id="movieModalLabel">Agregar nueva pelicula </h4>
                               </div>
                               <div class="modal-body">
 
@@ -313,8 +313,11 @@
 
 
     function editMovie(id){
-        console.log("functiona");
+
         var dataUrl = "<?php echo base_url();?>admin_movie_ci/get_single_movie/" + id;
+
+        $("#movieModalLabel").text("Editar pelicula"); 
+        $("#submitDirected").text("Editar"); 
 
         $.ajax({
 
