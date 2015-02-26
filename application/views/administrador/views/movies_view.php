@@ -35,9 +35,9 @@
                                                 <th> Score </th>
                                                 <th> Género </th>
                                                 <th> Activar </th>
-                                                <th> Editar </th>
-                                                <th> Eliminar </th>
                                                 <th> Imagen </th>
+                                                <th> Editar </th>
+                                                <th> Eliminar </th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>

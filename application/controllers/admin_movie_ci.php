@@ -98,7 +98,7 @@ class Admin_movie_ci extends CI_Controller {
 		
 		} else {
 
-			$this->movie_model->update_movie(); 			
+			$this->movie_model->update_movie($id); 			
 			redirect('admin/movies'); 
 		}
 	}
