@@ -11,7 +11,7 @@
 
 		public function add_movie(){
 
-			die(var_dump($_FILES)); 
+			
 
 			$config['upload_path'] = './images/'; 
 			$config['allowed_types'] = 'gif|jpg|png';
@@ -37,7 +37,8 @@
 					'm_article'  	 => $this->input->post('m_article'),
 					'm_quotes'       => $this->input->post('m_quotes'), 
 					'm_images'       => $name,
-					'm_url'      	 => $url, 				
+					'm_url'      	 => $url,
+					'm_active_item'  => 0,				
 					
 				); 
 

@@ -39,6 +39,7 @@
                                                 <th> Quote </th>
                                                 <th> Editar </th>
                                                 <th> Eliminar </th>
+                                                <th> Imagen </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -54,6 +55,22 @@
                                                     <button class="btn btn-default" onclick="editMovie(<?php echo $movie['m_index']?>)" data-toggle="modal" data-target="#modalMovies">
                                                         <span class="glyphicon glyphicon-pencil"></span>
                                                     </button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <?php if ($movie['m_images'] == null): ?>
+                                                    <button class="btn btn-danger">
+                                                        <span class="glyphicon glyphicon-camera"></span>
+                                                    </button>
+                                                    <?php else:?>
+                                                    <button class="btn btn-default">
+                                                        <span class="glyphicon glyphicon-camera"></span>
+                                                    </button>
+                                                    <?php endif; ?>
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>

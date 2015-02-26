@@ -46,27 +46,28 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                         <?php foreach ($movies as $movie): ?>
-                            <div class="col-sm-4 col-lg-4 col-md-4">                        
-                                <div class="thumbnail">
-                                    <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>" alt="">
-                                    <div class="caption">
-                                        <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
-                                        <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
-                                        <p><?php echo $movie['m_quotes']; ?></p>
-                                    </div>
-                                    <div class="ratings">
-                                        <p class="pull-right">15 reviews</p>
-                                        <p>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star"></span>
-                                            <span class="glyphicon glyphicon-star-empty"></span>
-                                        </p>
-                                    </div>
+                            <?php if ($movie['m_active_item'] == 1): ?>
+                                <div class="col-sm-4 col-lg-4 col-md-4">                        
+                                    <div class="thumbnail">
+                                        <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>" alt="">
+                                        <div class="caption">
+                                            <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
+                                            <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
+                                            <p><?php echo $movie['m_quotes']; ?></p>
+                                        </div>
+                                        <div class="ratings">
+                                            <p class="pull-right">15 reviews</p>
+                                            <p>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star"></span>
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                            </p>
+                                        </div>
+                                    </div>                           
                                 </div>
-                           
-                            </div>
+                            <?php endif; ?>
                         <?php endforeach; ?>                         
 
                         </div>
