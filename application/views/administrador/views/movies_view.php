@@ -68,15 +68,15 @@
                                         <option> <?php echo $category['c_category']; ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                            </div>  
-                            <div class="form-group">
-                                <label>Description</label>
-                                <input class="form-control" type="text" name="m_description" placeholder="Ingresar descripcion">                                
-                            </div> 
+                            </div>                             
                             <div class="form-group">
                                 <label>Articulo</label>
                                 <textarea name="m_article"></textarea>
                             </div> 
+                            <div class="form-group">
+                                <label>Quote</label>
+                                <input class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
+                            </div>
                             <div class="form-group">
                                 <label >Subir imagen</label>
                                 <input type="file" name="file" id="exampleInputFile">    

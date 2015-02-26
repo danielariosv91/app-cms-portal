@@ -6,7 +6,6 @@
 
             <div class="col-md-10 col-md-offset-1">
                 <div class="row carousel-holder">
-
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -15,6 +14,8 @@
                                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner"> 
+                                
+                                <!-- No me convence este codigo  -->
                                 <?php foreach ($sliders as $slider): ?>
                                 <?php if ($slider['s_active_item'] == 1): ?>
                                     <div class="item active">
@@ -51,7 +52,7 @@
                                     <div class="caption">
                                         <h5 class="pull-right">(<?php echo $movie['m_year']; ?>)</h5>
                                         <h4><a href="movie/<?php echo $movie['m_url']?>"><?php echo $movie['m_name']; ?></a></h4>
-                                        <p><?php echo $movie['m_description']; ?></p>
+                                        <p><?php echo $movie['m_quotes']; ?></p>
                                     </div>
                                     <div class="ratings">
                                         <p class="pull-right">15 reviews</p>

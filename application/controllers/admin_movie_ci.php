@@ -53,9 +53,9 @@ class Admin_movie_ci extends CI_Controller {
 		$this->form_validation->set_rules('m_director', 'MovieDirector');
 		$this->form_validation->set_rules('m_year', 'MovieYear');
 		$this->form_validation->set_rules('m_music', 'MovieMusic');
-		$this->form_validation->set_rules('m_category', 'MovieCategory');
-		$this->form_validation->set_rules('m_description', 'MovieDescription');
+		$this->form_validation->set_rules('m_category', 'MovieCategory');		
 		$this->form_validation->set_rules('m_article', 'MovieArticle');
+		$this->form_validation->set_rules('m_quotes', 'MovieQuotes');
 
 		if ($this->form_validation->run() == false){
 			

@@ -55,20 +55,42 @@
                     <!-- /.input-group -->
                 </div>
 
-                <!-- Blog Categories Well -->
+
+
+                <!-- Movie Details Well -->
+                <div class="well">
+                    <h4></h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li>Director: </li>
+                                <li>Reparto: </li>
+                                <li>Música: </li>
+                                <li>Género</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#"><?php echo $movie['m_directed'];?></a></li>
+                                <li><a href="#">Nombre de actores</a></li>
+                                <li><a href="#"><?php echo $movie['m_music'];?></a></li>
+                                <li><a href="#"><?php echo $movie['m_category'];?></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
                 <div class="well">
                     <h4>Arcitulos asociados</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
+                                <li><a href="#">Category Name</a></li>
+                                <li><a href="#">Category Name</a></li>
+                                <li><a href="#">Category Name</a></li>
+                                <li><a href="#">Category Name</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">

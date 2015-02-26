@@ -32,8 +32,8 @@
 					'm_year'     	 => $this->input->post('m_year'),
 					'm_music'    	 => $this->input->post('m_music'),
 					'm_category' 	 => $this->input->post('m_category'),
-					'm_description'  => $this->input->post('m_description'),
 					'm_article'  	 => $this->input->post('m_article'),
+					'm_quotes'       => $this->input->post('m_quotes'), 
 					'm_images'       => $name,
 					'm_url'      	 => $url, 				
 					
