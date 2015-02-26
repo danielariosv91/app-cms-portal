@@ -39,8 +39,10 @@
 */
 
 
-
+$route['directores']            = "directed_controller/directed"; 
 $route['movie/(:any)']          = "home_controller/movie_view/$1"; 
+
+
 
 $route['admin/slider']          = "admin_slider_ci/slider"; 
 $route['admin/movies'] 			= "admin_movie_ci/movies";

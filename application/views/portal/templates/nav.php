@@ -1,6 +1,4 @@
-
-
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -11,17 +9,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo base_url();?>">Movies</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Blog</a>
-                    </li>                     
+                <ul class="nav navbar-nav navbar-right">                    
+                    <li><?php echo anchor('directores','Directores');?></li>                   
+                    <li><?php echo anchor('','Blog');?></li>
+                    <li><?php echo anchor('','Contacto'); ?></li>
+                    <li><?php echo anchor('','About');?></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
