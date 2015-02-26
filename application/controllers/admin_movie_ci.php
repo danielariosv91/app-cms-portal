@@ -42,11 +42,14 @@ class Admin_movie_ci extends CI_Controller {
 
 
 
-	public function movie_image(){
+	public function movie_image($url){
+
+		$data['movie'] = $this->movie_model->get_movie_by_url($url);
+		
 
 		$this->load->view('administrador/templates/header');
 		$this->load->view('administrador/templates/nav');
-		$this->load->view('administrador/views/movie_image_view');
+		$this->load->view('administrador/views/movie_image_view', $data);
 	}
 
 

@@ -16,44 +16,7 @@
                 </div>
                 <!-- /.row -->
 
-                <div class="row">                  
-
-
-                    <!-- ==== Table Thumbnail ==== --> 
-                    <div class="col-lg-6">                                  
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                   <th></th>
-                                   <th></th>                                     
-                                </tr>  
-                            </thead>
-                            <tbody>
-                                
-                                    <tr class="col-lg-8">
-                                       <td>
-                                            <div class="slide-content-admin">
-                                                <img src="">
-                                            </div>
-                                       </td> 
-                                       <td>
-                                            <div class="checkbox">
-                                              <label>
-                                                <input type="checkbox" value=""> Destacar
-                                              </label>
-                                            </div>
-                                            <div class="checkbox">
-                                              <label>
-                                                <input type="checkbox" value=""> Activar
-                                              </label>
-                                            </div>
-                                       </td> 
-                                    </tr>
-                                
-                            </tbody>
-                        </table>  
-                    </div>   
-                    <!-- End Thumbnail --> 
+                <div class="row">    
 
                     <!-- ==== Form Image==== -->
                     <div class="col-lg-5">
@@ -68,8 +31,19 @@
                             </form> 
                         </div> <!-- end well -->                       
                         <hr> 
-                    </div>
-                    <!-- End Form Image -->  
+                    </div><!-- End Form Image -->  
+
+                    <!-- ==== Table Thumbnail ==== --> 
+                    <div class="col-lg-3"> 
+                        <?php if ($movie['m_images'] != null):?> 
+                        <div class="well">                                                           
+                            <a href="#" class="thumbnail">
+                                <img src="<?php echo base_url()?>images/<?php echo $movie['m_images']?>">
+                            </a>                           
+                        </div>
+                        <?php endif; ?>
+                    </div>   
+                    <!-- End Thumbnail --> 
 
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
