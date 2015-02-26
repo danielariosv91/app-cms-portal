@@ -247,24 +247,21 @@
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#m_article').val();          
             var dataPost = $("#form-movie").serialize(); 
-            var hidden = $("#hidden").val();
+            var hidden = $("#hidden").val();          
 
-            console.log(hidden); 
-
-             if(hidden == 0){
+            if(hidden == 0){
 
                 var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
                 var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>';
 
             } else {
-                            
+
                 var dataUrl  = '<?php echo base_url();?>admin_movie_ci/update_movie/' + hidden; 
                 var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha editado con éxito!</div>';
            
             }
 
-            console.log("que es esto?" + dataUrl);
-
+            
 
            
             $.ajax({
@@ -335,7 +332,7 @@
         var dataUrl = "<?php echo base_url();?>admin_movie_ci/get_single_movie/" + id;
 
         $("#movieModalLabel").text("Editar pelicula"); 
-        $("#submitDirected").text("Editar"); 
+        $("#submitMovie").text("Editar"); 
 
         $.ajax({
 

@@ -31,8 +31,29 @@
 		}
 
 		public function update_movie($id){
+			
+
+			$url = url_title($this->input->post('m_name'), 'dash', true);
+
+			$data = array(
 
 
+					'm_name'     	 => $this->input->post('m_name'),	
+					'm_directed' 	 => $this->input->post('m_director'),
+					'm_year'     	 => $this->input->post('m_year'),
+					'm_music'    	 => $this->input->post('m_music'),
+					'm_category' 	 => $this->input->post('m_category'),
+					'm_article'  	 => $this->input->post('m_article'),
+					'm_quotes'       => $this->input->post('m_quotes'),
+					'm_url'      	 => $url,		
+					'm_images'       => $name,
+				);
+
+			$this->db->where('m_index', $id);
+			$this->db->update('t_movies', $data);
+		}
+
+		public function edit_photo_movie($id){
 
 			$config['upload_path'] = './images/'; 
 			$config['allowed_types'] = 'gif|jpg|png';
@@ -44,14 +65,12 @@
 			$name = $file['file_name']; 
 
 			/* subir imagen al servidor*/
-			$this->upload->do_upload('file'); 
+			$this->upload->do_upload('file');
 
 			$data = array(
 
-
-					'm_name'     	 => $this->input->post('m_name'),		
 					'm_images'       => $name,
-				);
+				); 
 
 			$this->db->where('m_index', $id);
 			$this->db->update('t_movies', $data);

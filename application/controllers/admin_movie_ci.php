@@ -84,7 +84,7 @@ class Admin_movie_ci extends CI_Controller {
 
 	public function update_movie($id){
 
-		
+
 		$this->form_validation->set_rules('m_name', 'MovieName');
 		$this->form_validation->set_rules('m_director', 'MovieDirector');
 		$this->form_validation->set_rules('m_year', 'MovieYear');
@@ -102,6 +102,22 @@ class Admin_movie_ci extends CI_Controller {
 			$this->movie_model->update_movie($id); 			
 			redirect('admin/movies'); 
 		}
+	}
+
+	public function update_movie_image($id){
+
+
+		$this->form_validation->set_rules('file', 'HiddenFile');
+
+		if ($this->form_validation->run() == false){			
+
+		
+		} else {
+
+			$this->movie_model->edit_photo_movie($id); 			
+			redirect('admin/movies'); 
+		}
+
 	}
 
 	public function remove_movie($id){

@@ -21,7 +21,7 @@
                     <!-- ==== Form Image==== -->
                     <div class="col-lg-5">
                         <div class="well">
-                            <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_movie_ci/update_movie/<?php echo $movie['m_index']?>" >                       
+                            <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_movie_ci/update_movie_image/<?php echo $movie['m_index']?>" >                       
                                 <div class="form-group">
                                     <label >Subir imagen</label>
                                     <input type="file" name="file" id="exampleInputFile"> 
