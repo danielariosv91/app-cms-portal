@@ -11,6 +11,7 @@
 
 		public function add_movie(){
 
+			die(var_dump($_FILES)); 
 
 			$config['upload_path'] = './images/'; 
 			$config['allowed_types'] = 'gif|jpg|png';

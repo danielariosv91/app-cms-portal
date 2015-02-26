@@ -75,7 +75,7 @@
                               <div class="modal-body">
 
                                 <!-- Form Movies  -->
-                                <form role="form" id="form-movie" enctype="multipart/form-data">
+                                <form role="form" id="form-movie">
 
                                     <div class="form-group">
                                         <label>Nombre y Director </label>
@@ -129,12 +129,6 @@
                                         <label>Quote</label>
                                         <input id="m_quote_input" class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
                                     </div>
-                                    <div class="form-group">
-                                        <label >Subir imagen</label>
-                                        <input type="file" name="file" id="exampleInputFile">    
-                                    </div>     
-
-
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="submitMovie" >Agregar</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
                                 </form>                                                              
@@ -206,11 +200,17 @@
 
     $(document).ready(function(){
 
+
+
         $("#submitMovie").click(function(){
 
             tinyMCE.triggerSave(); 
             var dataTextArea = $('#m_article').val();          
             var dataPost = $("#form-movie").serialize();
+
+
+
+             
 
             var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
 
@@ -218,7 +218,7 @@
 
                 type: "POST",
                 url: dataUrl,
-                dataType: "text", 
+                dataType: "text",    
                 data: (dataTextArea, dataPost),
                 success: function(data){
 
@@ -241,10 +241,12 @@
 
             $.ajax({
 
-                type: "POST", 
+                type: "POST",
+                enctype: 'multipart/form-data',
                 url: dataURL, 
                 dataType: "text", 
-                data: (dataTextArea, dataPost), 
+                data: (dataTextArea, dataPost),
+
                 success: function(data){
 
                     $(".alert-content").append(alertMSG); 
