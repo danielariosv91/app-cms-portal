@@ -36,7 +36,7 @@
                                                 <th> Año </th>
                                                 <th> Score </th>
                                                 <th> Género </th>
-                                                <th> Quote </th>
+                                                <th> Activar </th>
                                                 <th> Editar </th>
                                                 <th> Eliminar </th>
                                                 <th> Imagen </th>
@@ -50,7 +50,16 @@
                                                 <td><?php echo $movie['m_year']?></td>
                                                 <td><?php echo $movie['m_music']?></td>
                                                 <td><?php echo $movie['m_category']?></td>
-                                                <td><?php echo $movie['m_quotes']?></td>
+                                                <td>
+                                                    <?php if ($movie['m_images'] == null): ?>    
+                                                        <input type="checkbox" disabled></td>
+                                                    <?php else: ?>
+                                                        <?php if ($movie['m_active_item'] == 1): ?>
+                                                            <input type="checkbox" checked></td>
+                                                        <?php else: ?>
+                                                            <input type="checkbox"></td>    
+                                                        <?php endif;?>
+                                                    <?php endif; ?>
                                                 <td>
                                                     <button class="btn btn-default" onclick="editMovie(<?php echo $movie['m_index']?>)" data-toggle="modal" data-target="#modalMovies">
                                                         <span class="glyphicon glyphicon-pencil"></span>
@@ -63,13 +72,13 @@
                                                 </td>
                                                 <td>
                                                     <?php if ($movie['m_images'] == null): ?>
-                                                    <button class="btn btn-danger">
+                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-danger">
                                                         <span class="glyphicon glyphicon-camera"></span>
-                                                    </button>
+                                                    </a>
                                                     <?php else:?>
-                                                    <button class="btn btn-default">
+                                                    <a href="images/<?php echo $movie['m_url']?>" class="btn btn-default">
                                                         <span class="glyphicon glyphicon-camera"></span>
-                                                    </button>
+                                                    </a>
                                                     <?php endif; ?>
                                                 </td>
                                             </tr>
