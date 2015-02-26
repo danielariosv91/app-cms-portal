@@ -72,6 +72,8 @@ class Admin_movie_ci extends CI_Controller {
 
 		
 		$this->form_validation->set_rules('d_name', 'DirectedName');
+		$this->form_validation->set_rules('d_description', 'DirectedDescription');
+
 		if ($this->form_validation->run() == false){
 			
 			//handle error

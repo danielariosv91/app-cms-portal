@@ -103,7 +103,11 @@
                             <form id="form-directed">
                                 <div class="form-group">
                                     <label>Nombre director: </label>
-                                    <input type="text" class="form-control" name="d_name" placeholder="Ingresar nombre director" required>
+                                    <input id="t_name" type="text" class="form-control" name="d_name" placeholder="Ingresar nombre director" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <textarea id="t_description" name="d_description"></textarea>
                                 </div>                            
                                 <button type="button" class="btn btn-default" data-dismiss="modal" id="submitDirected" >Agregar</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
@@ -133,17 +137,21 @@
 
         $("#submitDirected").click(function(){            
 
-            var dataPost = $("#form-directed").serialize();           
+            
+
+            tinyMCE.triggerSave(); 
+            var dataTextArea = $('#t_description').val();          
+            var dataPost = $("#form-directed").serialize();
+
             var dataURL  = '<?php echo base_url();?>admin_movie_ci/add_directed'; 
             var alertMSG = '<div class="alert alert-success" role="alert">¡Se ha agregado con éxito!</div>'
-
 
             $.ajax({
 
                 type: "POST", 
                 url: dataURL, 
                 dataType: 'text', 
-                data: dataPost, 
+                data: (dataTextArea, dataPost), 
                 success: function(data){
 
                     $(".alert-content").append(alertMSG); 
