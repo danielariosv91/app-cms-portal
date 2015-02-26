@@ -49,6 +49,13 @@
 			return $query->result_array(); 
 		} 
 
+		public function get_movie_by_id($id){
+
+			$query = $this->db->get_where('t_movies', array('m_index' => $id)); 
+			return $query->row_array(); 
+
+		}
+
 		public function get_movie_by_url($url){
 
 			$query = $this->db->get_where('t_movies', array('m_url' => $url));

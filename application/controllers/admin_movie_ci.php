@@ -69,6 +69,33 @@ class Admin_movie_ci extends CI_Controller {
 		}
 	}
 
+	public function update_movie($id){
+
+		$this->form_validation->set_rules('m_name', 'MovieName');
+		$this->form_validation->set_rules('m_director', 'MovieDirector');
+		$this->form_validation->set_rules('m_year', 'MovieYear');
+		$this->form_validation->set_rules('m_music', 'MovieMusic');
+		$this->form_validation->set_rules('m_category', 'MovieCategory');		
+		$this->form_validation->set_rules('m_article', 'MovieArticle');
+		$this->form_validation->set_rules('m_quotes', 'MovieQuotes');
+
+		if ($this->form_validation->run() == false){
+			
+			//handle error
+		
+		} else {
+
+			$this->movie_model->update_movie(); 			
+			redirect('admin/movies'); 
+		}
+	}
+
+	public function get_single_movie($id){
+
+		$data['movie'] = $this->movie_model->get_movie_by_id($id); 
+		echo json_encode($data); 
+	}
+
 	public function add_directed(){
 
 		

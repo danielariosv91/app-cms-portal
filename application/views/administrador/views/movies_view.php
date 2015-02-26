@@ -50,6 +50,11 @@
                                                 <td><?php echo $movie['m_music']?></td>
                                                 <td><?php echo $movie['m_category']?></td>
                                                 <td><?php echo $movie['m_quotes']?></td>
+                                                <td>
+                                                    <button class="btn btn-default" onclick="editMovie(<?php echo $movie['m_index']?>)" data-toggle="modal" data-target="#modalMovies">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </button>
+                                                </td>
                                             </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -74,11 +79,11 @@
 
                                     <div class="form-group">
                                         <label>Nombre y Director </label>
-                                        <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película" required>                                
+                                        <input id="m_name_input" class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película" required>                                
                                     </div>                             
                                     <div class="form-group form-inline">                                
                                         <div class="btn-group">                                    
-                                            <select class="form-control" role="group" name="m_director">
+                                            <select id="m_directed_input" class="form-control" role="group" name="m_director">
                                                 <?php foreach ($directors as $director): ?>
                                                     <option> <?php echo $director['d_name']; ?></option>
                                                 <?php endforeach; ?>                                      
@@ -98,7 +103,7 @@
                                     </div>                                                                        
                                     <div class="form-group">
                                         <label>Año:</label>
-                                        <select class="form-control" name="m_year">
+                                        <select id="m_year_input" class="form-control" name="m_year">
                                             <?php for ($i = 1910; $i <= 2015; $i++): ?>
                                                 <option> <?php echo $i ?></option>
                                             <?php endfor; ?>
@@ -106,11 +111,11 @@
                                     </div>                                                           
                                     <div class="form-group">
                                         <label>Música de:</label>
-                                        <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
+                                        <input id="m_score_input" class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
                                     </div> 
                                     <div class="form-group">
                                         <label>Categoría</label>
-                                        <select class="form-control" name="m_category">
+                                        <select id="m_category_input" class="form-control" name="m_category">
                                             <?php foreach ($categories as $category): ?>
                                                 <option> <?php echo $category['c_category']; ?></option>
                                             <?php endforeach; ?>
@@ -122,7 +127,7 @@
                                     </div> 
                                     <div class="form-group">
                                         <label>Quote</label>
-                                        <input class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
+                                        <input id="m_quote_input" class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
                                     </div>
                                     <div class="form-group">
                                         <label >Subir imagen</label>
@@ -258,4 +263,30 @@
     $("#close").click(function(){
         location.reload();
     });
+
+
+    function editMovie(id){
+        console.log("functiona");
+        var dataUrl = "<?php echo base_url();?>admin_movie_ci/get_single_movie/" + id;
+
+        $.ajax({
+
+            url: dataUrl, 
+            data: "id=" + id, 
+            success: function(data){
+
+                    var place = $.parseJSON(data);
+                    $.each(place, function(){
+
+                        $("#m_name_input").val(this['m_name']);
+                        $("#m_director_input").val(this['m_directed']);
+                        $("#m_year_input").val(this['m_year']);
+                        $("#m_score_input").val(this['m_music']); 
+                        $("#m_article").val(this['m_article']);  
+                        $("#m_quote_input").val(this['m_quotes']);   
+                    });
+                
+            }
+        });
+    }
 </script>
