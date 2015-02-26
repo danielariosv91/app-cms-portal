@@ -9,7 +9,8 @@
 		}
 
 
-		public function add_movie(){			
+		public function add_movie(){
+
 
 			$config['upload_path'] = './images/'; 
 			$config['allowed_types'] = 'gif|jpg|png';

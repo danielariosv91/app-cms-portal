@@ -28,8 +28,9 @@ class Admin_movie_ci extends CI_Controller {
 
 	public function movies(){
 
-		$data['directors'] = $this->directors_model->get_directed(); 
-		$data['categories'] = $this->categories_model->get_categories(); 
+		$data['directors']  = $this->directors_model->get_directed(); 
+		$data['categories'] = $this->categories_model->get_categories();
+		$data['movies']     = $this->movie_model->get_all_movies();  
 	
 
 		$this->load->view('administrador/templates/header');

@@ -4,9 +4,7 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Agregar película 
-                        </h1>
+                        <h1 class="page-header">Sección películas</h1>                        
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>
@@ -21,75 +19,143 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-6">
-
-                        <form role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url()?>admin_movie_ci/add_movie" >
-
-                            <div class="form-group">
-                                <label>Nombre y Director </label>
-                                <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película" required>                                
-                            </div>                             
-                            <div class="form-group form-inline">                                
-                                <div class="btn-group">                                    
-                                    <select class="form-control" role="group" name="m_director">
-                                        <?php foreach ($directors as $director): ?>
-                                            <option> <?php echo $director['d_name']; ?></option>
-                                        <?php endforeach; ?>                                      
-                                    </select>
-                                </div>                                
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                        Añadir director
-                                    </button>
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                    </button>                                    
-                                    <button type="button" class="btn btn-default">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
-                                    </button>
-                                </div>                                                                                         
-                            </div>                                                                        
-                            <div class="form-group">
-                                <label>Año:</label>
-                                <select class="form-control" name="m_year">
-                                    <?php for ($i = 1910; $i <= 2015; $i++): ?>
-                                        <option> <?php echo $i ?></option>
-                                    <?php endfor; ?>
-                                </select> 
-                            </div>                                                           
-                            <div class="form-group">
-                                <label>Música de:</label>
-                                <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
-                            </div> 
-                            <div class="form-group">
-                                <label>Categoría</label>
-                                <select class="form-control" name="m_category">
-                                    <?php foreach ($categories as $category): ?>
-                                        <option> <?php echo $category['c_category']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>                             
-                            <div class="form-group">
-                                <label>Articulo</label>
-                                <textarea name="m_article"></textarea>
-                            </div> 
-                            <div class="form-group">
-                                <label>Quote</label>
-                                <input class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalMovies">
+                            Añadir película
+                        </button>
+                        <hr>
+                        <!-- Table -->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th> Nombre </th>
+                                                <th> Director</th>
+                                                <th> Año </th>
+                                                <th> Score </th>
+                                                <th> Género </th>
+                                                <th> Quote </th>
+                                                <th> Editar </th>
+                                                <th> Eliminar </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($movies as $movie): ?>
+                                            <tr>
+                                                <td><?php echo $movie['m_name']; ?></td>
+                                                <td><?php echo $movie['m_directed']?></td>
+                                                <td><?php echo $movie['m_year']?></td>
+                                                <td><?php echo $movie['m_music']?></td>
+                                                <td><?php echo $movie['m_category']?></td>
+                                                <td><?php echo $movie['m_quotes']?></td>
+                                            </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label >Subir imagen</label>
-                                <input type="file" name="file" id="exampleInputFile">    
-                            </div>     
+                        </div>
+                        <!-- end Table -->
+                
+                        <!-- Modal Movies -->
+                        <div class="modal fade" id="modalMovies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Agregar nueva pelicula </h4>
+                              </div>
+                              <div class="modal-body">
+
+                                <!-- Form Movies  -->
+                                <form role="form" id="form-movie" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label>Nombre y Director </label>
+                                        <input class="form-control" type="text" name="m_name" placeholder="Ingresar nombre película" required>                                
+                                    </div>                             
+                                    <div class="form-group form-inline">                                
+                                        <div class="btn-group">                                    
+                                            <select class="form-control" role="group" name="m_director">
+                                                <?php foreach ($directors as $director): ?>
+                                                    <option> <?php echo $director['d_name']; ?></option>
+                                                <?php endforeach; ?>                                      
+                                            </select>
+                                        </div>                                
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                                Añadir director
+                                            </button>
+                                            <button type="button" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            </button>                                    
+                                            <button type="button" class="btn btn-default">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  
+                                            </button>
+                                        </div>                                                                                         
+                                    </div>                                                                        
+                                    <div class="form-group">
+                                        <label>Año:</label>
+                                        <select class="form-control" name="m_year">
+                                            <?php for ($i = 1910; $i <= 2015; $i++): ?>
+                                                <option> <?php echo $i ?></option>
+                                            <?php endfor; ?>
+                                        </select> 
+                                    </div>                                                           
+                                    <div class="form-group">
+                                        <label>Música de:</label>
+                                        <input class="form-control" type="text" name="m_music" placeholder="Ingresar compositor">                                
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>Categoría</label>
+                                        <select class="form-control" name="m_category">
+                                            <?php foreach ($categories as $category): ?>
+                                                <option> <?php echo $category['c_category']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>                             
+                                    <div class="form-group">
+                                        <label>Articulo</label>
+                                        <textarea id="m_article" name="m_article"></textarea>
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>Quote</label>
+                                        <input class="form-control" type="text" name="m_quotes" placeholder="Ingresar quote">                                
+                                    </div>
+                                    <div class="form-group">
+                                        <label >Subir imagen</label>
+                                        <input type="file" name="file" id="exampleInputFile">    
+                                    </div>     
 
 
-                            <button type="submit" class="btn btn-default">Agregar</button>
-                        </form>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="submitMovie" >Agregar</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Cerrar</button>
+                                </form>                                                              
+                              </div>
+                                <div class="modal-footer">
+                                    <div class="alert-content">
+                                        
+                                    </div>   
+                                </div>
+                            </div>
+                          </div>
+                        </div>   
+
+
+
+                       
                         <hr>
 
         
                 </div>
                 <!-- /.row -->
+               
+               
+
+
+
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -135,6 +201,30 @@
 
     $(document).ready(function(){
 
+        $("#submitMovie").click(function(){
+
+            tinyMCE.triggerSave(); 
+            var dataTextArea = $('#m_article').val();          
+            var dataPost = $("#form-movie").serialize();
+
+            var dataUrl = "<?php echo base_url()?>admin_movie_ci/add_movie";
+
+            $.ajax({
+
+                type: "POST",
+                url: dataUrl,
+                dataType: "text", 
+                data: (dataTextArea, dataPost),
+                success: function(data){
+
+                    console.log(data); 
+                }
+            });
+
+            return false; 
+
+        });
+
         $("#submitDirected").click(function(){            
 
             tinyMCE.triggerSave(); 
@@ -148,7 +238,7 @@
 
                 type: "POST", 
                 url: dataURL, 
-                dataType: 'text', 
+                dataType: "text", 
                 data: (dataTextArea, dataPost), 
                 success: function(data){
 
@@ -159,7 +249,9 @@
             }); 
 
             return false; 
-        });             
+        }); 
+
+
     });
 
     /* Cerrar Modal */
