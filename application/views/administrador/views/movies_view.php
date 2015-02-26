@@ -53,9 +53,9 @@
                                                         <input type="checkbox" disabled>
                                                     <?php else: ?>
                                                         <?php if ($movie['m_active_item'] == 1): ?>
-                                                            <input type="checkbox" checked></td>
+                                                            <input type="checkbox" onClick="uncheckedItem(<?php echo $movie['m_index']?>)" checked></td>
                                                         <?php else: ?>
-                                                            <input type="checkbox"></td>    
+                                                            <input type="checkbox" onClick="activeItem(<?php echo $movie['m_index']?>)"></td>    
                                                         <?php endif;?>
                                                     <?php endif; ?>
                                                 </td>
@@ -360,4 +360,9 @@
 
         window.location = '<?php echo base_url();?>admin_movie_ci/remove_movie/' + id; 
     } 
+
+    function activeItem(id){
+
+        window.location = '<?php echo base_url();?>admin_movie_ci/active_movie_item/' + id; 
+    }
 </script>

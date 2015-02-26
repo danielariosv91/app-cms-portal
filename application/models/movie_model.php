@@ -45,8 +45,7 @@
 					'm_category' 	 => $this->input->post('m_category'),
 					'm_article'  	 => $this->input->post('m_article'),
 					'm_quotes'       => $this->input->post('m_quotes'),
-					'm_url'      	 => $url,		
-					'm_images'       => $name,
+					'm_url'      	 => $url,	
 				);
 
 			$this->db->where('m_index', $id);
@@ -79,6 +78,17 @@
 		public function delete_movie($id){
 
 			return $this->db->delete('t_movies', array('m_index' => $id)); 
+		}
+
+		public function active_item($id){
+
+			$data = array(
+
+					'm_active_item'  => 1,
+				);
+
+			$this->db->where('m_index', $id);
+			$this->db->update('t_movies', $data);
 		}
 
 		public function get_all_movies(){

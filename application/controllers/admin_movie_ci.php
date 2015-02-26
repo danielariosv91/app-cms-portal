@@ -133,10 +133,11 @@ class Admin_movie_ci extends CI_Controller {
 		echo json_encode($data); 
 	}
 
+	public function active_movie_item($id){
 
-
-
-
+		$this->movie_model->active_item($id);
+		redirect('admin/movies');
+	}
 
 	public function add_directed(){
 
