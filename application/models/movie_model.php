@@ -32,7 +32,7 @@
 
 		public function update_movie($id){
 
-		
+
 
 			$config['upload_path'] = './images/'; 
 			$config['allowed_types'] = 'gif|jpg|png';
@@ -53,6 +53,11 @@
 
 			$this->db->where('m_index', $id);
 			$this->db->update('t_movies', $data);
+		}
+
+		public function delete_movie($id){
+
+			return $this->db->delete('t_movies', array('m_index' => $id)); 
 		}
 
 		public function get_all_movies(){

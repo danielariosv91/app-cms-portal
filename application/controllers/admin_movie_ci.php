@@ -103,11 +103,23 @@ class Admin_movie_ci extends CI_Controller {
 		}
 	}
 
+	public function remove_movie($id){
+
+		$this->movie_model->delete_movie($id); 
+		redirect('admin/movies'); 
+
+	}
+
 	public function get_single_movie($id){
 
 		$data['movie'] = $this->movie_model->get_movie_by_id($id); 
 		echo json_encode($data); 
 	}
+
+
+
+
+
 
 	public function add_directed(){
 

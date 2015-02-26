@@ -76,7 +76,7 @@
                                                     </button>
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-default">
+                                                    <button class="btn btn-default" onClick="removeMovie(<?php echo $movie['m_index']?>)">
                                                         <span class="glyphicon glyphicon-remove"></span>
                                                     </button>
                                                 </td>                                                
@@ -335,4 +335,9 @@
             }
         });
     }
+
+    function removeMovie(id){
+
+        window.location = '<?php echo base_url();?>admin_movie_ci/remove_movie/' + id; 
+    } 
 </script>
