@@ -22,6 +22,11 @@
         <!-- Custom Fonts -->
         <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+        <!-- Data table CSS-->
+        <link href="/bower_components/datatables.net-dt/css/jquery.dataTables.css">
+        <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -35,6 +40,9 @@
 
         <!-- Bootstrap Core JavaScript -->
         <script src="/bower_components/dist/js/bootstrap.min.js"></script>
+
+        <!-- Data table -->
+        <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 
         <script type="text/javascript" src="/plugins/tinymce.min.js"></script>
         <script type="text/javascript">
