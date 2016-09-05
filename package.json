@@ -1,0 +1,19 @@
+{
+  "name": "app-cms-portal",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielariosv91/app-cms-portal.git"
+  },
+  "author": "drios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielariosv91/app-cms-portal/issues"
+  },
+  "homepage": "https://github.com/danielariosv91/app-cms-portal#readme"
+}
