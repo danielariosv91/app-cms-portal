@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class movie_controller extends CI_Controller
+class Movie_Controller extends CI_Controller
 {
 
     /* ==========================================
@@ -8,13 +8,15 @@ class movie_controller extends CI_Controller
        ==========================================
      */
 
+    /**
+     * Show Index view Movie
+     * @param folder_name
+     * @param file_name
+     */
+
     public function show()
     {
-        //$data['directors'] = $this->directors_model->get_directed();
-        //$data['categories'] = $this->categories_model->get_categories();
-        //$data['movies'] = $this->movie_model->get_all_movies();
-        die('index');
-        $this->autoload_file->rendering();
+        $this->autoload_file->rendering('movies', 'show');
     }
 
     /**
@@ -69,9 +71,6 @@ class movie_controller extends CI_Controller
     {
         $this->movies->update();
     }
-
-
-
 
 
     /** Old methods */
