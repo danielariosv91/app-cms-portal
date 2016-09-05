@@ -5,18 +5,17 @@ class Autoload_File extends CI_Loader
     /**
      * @param $folder_name
      * @param $template_name
-     * @param $vars
+     * @param $vars = data.
      */
 
 
     public function rendering($folder_name, $template_name, $vars = array())
     {
-        $out = new stdClass();
         $route = 'admin/pages/' . $folder_name . '/' . $template_name;
 
         //LOAD TEMPLATES
         $this->view('admin/templates/header');
-        $this->view('admin/templates/nav', $out);
+        $this->view('admin/templates/nav');
         $this->view($route, $vars);
         $this->view('admin/templates/footer');
     }

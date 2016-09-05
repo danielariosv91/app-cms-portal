@@ -16,7 +16,9 @@ class Category_Controller extends CI_Controller
 
     public function show()
     {
-        $this->autoload_file->rendering('categories', 'show');
+        $out = new stdClass();
+        $out->categories = $this->categories->show();
+        $this->autoload_file->rendering('categories', 'show', $out);
     }
 
     /**
@@ -71,13 +73,6 @@ class Category_Controller extends CI_Controller
     {
         $this->categories->update();
     }
-
-
-
-
-
-
-
 
 
     /** Old methods */
