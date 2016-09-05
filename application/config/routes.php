@@ -45,8 +45,16 @@ $route['movie/(:any)'] = "home_controller/movie_view/$1";
 
 $route['admin/slider'] = "admin_slider_ci/slider";
 $route['admin/images/(:any)'] = "admin_movie_ci/movie_image/$1";
-$route['app/admin/movies']      = "movie_controller/show";
-$route['app/admin/dashboard']   = "admin_dashboard_ci/dashboard";
+
+/** category route */
+$route['app/admin/categories'] = "category_controller/show";
+$route['app/admin/categories/create'] = "category_controller/create";
+
+/** movies route */
+$route['app/admin/movies'] = "movie_controller/show";
+$route['app/admin/movies/create'] = "movie_controller/create";
+
+$route['app/admin/dashboard'] = "admin_dashboard_ci/dashboard";
 
 $route['default_controller'] = "home_controller";
 $route['404_override'] = '';

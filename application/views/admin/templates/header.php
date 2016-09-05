@@ -42,6 +42,9 @@
                 selector: "textarea"
             });
 
+            $(document).ready(function() {
+                $('#table-cms-admin').DataTable();
+            });
         </script>
 
     </head>

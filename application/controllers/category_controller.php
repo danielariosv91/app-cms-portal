@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Movie_Controller extends CI_Controller
+class Category_Controller extends CI_Controller
 {
 
     /* ==========================================
@@ -16,7 +16,7 @@ class Movie_Controller extends CI_Controller
 
     public function show()
     {
-        $this->autoload_file->rendering('movies', 'show');
+        $this->autoload_file->rendering('categories', 'show');
     }
 
     /**
@@ -27,17 +27,17 @@ class Movie_Controller extends CI_Controller
 
     public function create()
     {
-        $this->autoload_file->rendering('movies', 'create');
+        $this->autoload_file->rendering('categories', 'create');
     }
 
     /**
      * Store Movie Method
-     * @model movies
+     * @model categories
      */
 
     public function store()
     {
-        $this->movies->store();
+        $this->categories->store();
     }
 
     /**
@@ -54,23 +54,30 @@ class Movie_Controller extends CI_Controller
 
     /**
      * Update Movie Method
-     * @model movies
+     * @model categories
      */
 
     public function update()
     {
-        $this->movies->update();
+        $this->categories->update();
     }
 
     /**
      * Delete Movie Method
-     * @model movies
+     * @model categories
      */
 
     public function delete()
     {
-        $this->movies->update();
+        $this->categories->update();
     }
+
+
+
+
+
+
+
 
 
     /** Old methods */
@@ -93,7 +100,7 @@ class Movie_Controller extends CI_Controller
         } else {
 
             $this->movie_model->update_movie($id);
-            redirect('admin/movies');
+            redirect('admin/categories');
         }
     }
 
@@ -109,7 +116,7 @@ class Movie_Controller extends CI_Controller
         } else {
 
             $this->movie_model->edit_photo_movie($id);
-            redirect('admin/movies');
+            redirect('admin/categories');
         }
 
     }
@@ -118,7 +125,7 @@ class Movie_Controller extends CI_Controller
     {
 
         $this->movie_model->delete_movie($id);
-        redirect('admin/movies');
+        redirect('admin/categories');
 
     }
 
@@ -133,7 +140,7 @@ class Movie_Controller extends CI_Controller
     {
 
         $this->movie_model->active_item($id);
-        redirect('admin/movies');
+        redirect('admin/categories');
     }
 
     public function add_directed()
@@ -150,7 +157,7 @@ class Movie_Controller extends CI_Controller
         } else {
 
             $this->directors_model->add_director();
-            redirect('admin/movies');
+            redirect('admin/categories');
         }
 
     }
