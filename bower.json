@@ -1,0 +1,22 @@
+{
+  "name": "app-cms-portal",
+  "description": "no descrption\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Di",
+  "main": "\u001b[A\u001b[D\u001b[Dption\u001b[B",
+  "authors": [
+    "drios"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/danielariosv91/app-cms-portal",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.12",
+    "datatables.net-dt": "^1.10.12"
+  }
+}
